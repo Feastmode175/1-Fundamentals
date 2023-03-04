@@ -39,3 +39,10 @@ while True:
 print('You have chosen the character:', my_character,)
 print('Health:', my_hp)
 print('Damage:', my_damage)
+
+while True:
+  dragon_hp -= my_damage
+  print('The', my_character, 'damaged the Dragon!')
+  if dragon_hp <= 0:
+    print('The Dragon has lost the battle!')
+    break
