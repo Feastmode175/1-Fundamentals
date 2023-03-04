@@ -3,11 +3,12 @@ elf = 'Elf'
 human = 'Human'
 
 wizard_hp = 70
-elf_hp = 100
-human_hp = 150
-
 wizard_damage = 150
+
+elf_hp = 100
 elf_damage = 100
+
+human_hp = 150
 human_damage = 20
 
 dragon_hp = 300
@@ -35,3 +36,6 @@ while True:
   else:
     print('Unknown Character')
     
+print('You have chosen the character:', my_character,)
+print('Health:', my_hp)
+print('Damage:', my_damage)
