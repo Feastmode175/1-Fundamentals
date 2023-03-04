@@ -13,3 +13,25 @@ human_damage = 20
 dragon_hp = 300
 dragon_damage = 50
 
+while True:
+  print('1) Wizard \n2) Elf \n3) Human')
+  character = input('Choose your character: ')
+  
+  if character == "1":
+    my_character = wizard
+    my_hp = wizard_hp
+    my_damage = wizard_damage
+    break
+  elif character == "2":
+    my_character = elf
+    my_hp = elf_hp
+    my_damage = elf_damage
+    break
+  elif character == "3":
+    my_character = human
+    my_hp = human_hp
+    my_damage = human_damage
+    break
+  else:
+    print('Unknown Character')
+    
