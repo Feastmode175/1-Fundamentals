@@ -43,7 +43,7 @@ print('Damage:', my_damage)
 while True:
   dragon_hp -= my_damage
   print('The', my_character, 'attacked the Dragon!')
-  print('The', my_character, 'has', my_hp, 'remaining. \n\n')
+  print('The dragon has', dragon_hp, 'health remaining. \n\n')
   if dragon_hp <= 0:
     print('The Dragon has lost the battle!')
     break
@@ -52,3 +52,4 @@ while True:
   print('The', my_character, 'has', my_hp, 'health remaining. \n\n')
   if my_hp <= 0:
     print('The', my_character, 'has lost the battle!')
+    break
