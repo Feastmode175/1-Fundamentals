@@ -41,10 +41,10 @@ while True:                         #assign options menu
         show_balance(current_balance)
     elif option == '2':
         current_balance = deposit(current_balance)
-        print(current_balance)
+        print('Current balance is now:', current_balance)
     elif option == '3':
         current_balance = withdraw(current_balance)
-        print(current_balance)
+        print('Current balance is now:', current_balance)
     elif option == '4':
         logout(name)
         break
