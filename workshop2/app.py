@@ -20,12 +20,17 @@ print(name, 'has been registered with a starting balance of $' + str(balance), '
 
 #login validation
 while True:
-    print('LOGIN')                                              #user pin and name requested
+    print('LOGIN')                                              
     name_to_validate = input('Enter Name: ')
     pin_to_validate = input('Enter PIN: ')          
     
-    if name_to_validate == name and pin_to_validate == pin:     #check if entered date is the same as registered pin/name
+    if name_to_validate == name and pin_to_validate == pin:    
         print('Login Successful \n')
         break
     else:
         print('Invalid Credentials! \n')
+        
+#
+while True:
+    atm_menu(name)
+    option = input('Choose an option: ')
