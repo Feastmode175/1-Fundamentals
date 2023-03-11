@@ -12,13 +12,32 @@ def atm_menu(name):
     print("------------------------------------------")
 
 #collect user's name, pin, and current balance
-print('=== Automated Teller Machine ===')
-name = input('Enter Name to register: ')
-pin = input('Enter PIN: ')
-current_balance = 0
+while True:
+    print('=== Automated Teller Machine ===')
+    
+    #ensure user name is a max of 10 char
+    while True:
+        name = input('Enter Name to register: ')
+        if len(name) > 10:
+            print('The maximum name length is 10 characters. \n')
+        else:
+            break
+    
+    #ensure user pin is 4 digits
+    while True:
+        print('=== Automated Teller Machine ===')
+        pin = input('Enter PIN: ')
+        if pin.isnumeric() == False or len(pin) != 4:
+            print('Pin must be 4 numbers. \n')
+        else:
+            break
+    
+    
+    current_balance = 0
 
-#display user's current name and balance
-print(name, 'has been registered with a starting balance of $' + str(current_balance), '\n')
+    #display user's current name and balance
+    print(name, 'has been registered with a starting balance of $' + str(current_balance), '\n')
+    break
 
 #login validation
 while True:
@@ -33,7 +52,8 @@ while True:
         print('Invalid Credentials! \n')
         
 
-while True:                         #assign options menu
+#assign options
+while True:                         
     atm_menu(name)
     option = input('Choose an option: ')
     
