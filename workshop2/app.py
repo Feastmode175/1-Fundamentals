@@ -1,3 +1,5 @@
+from banking_pkg.account import *
+
 def atm_menu(name):
     print("")
     print("          === Automated Teller Machine ===          ")
@@ -13,10 +15,10 @@ def atm_menu(name):
 print('=== Automated Teller Machine ===')
 name = input('Enter Name to register: ')
 pin = input('Enter PIN: ')
-balance = 0
+current_balance = 0
 
 #display user's current name and balance
-print(name, 'has been registered with a starting balance of $' + str(balance), '\n')
+print(name, 'has been registered with a starting balance of $' + str(current_balance), '\n')
 
 #login validation
 while True:
@@ -30,7 +32,19 @@ while True:
     else:
         print('Invalid Credentials! \n')
         
-#
-while True:
+
+while True:                         #assign options menu
     atm_menu(name)
     option = input('Choose an option: ')
+    
+    if option == '1':
+        show_balance(current_balance)
+    elif option == '2':
+        current_balance = deposit(current_balance)
+        print(current_balance)
+    elif option == '3':
+        current_balance = withdraw(current_balance)
+        print(current_balance)
+    elif option == '4':
+        logout(name)
+        break
