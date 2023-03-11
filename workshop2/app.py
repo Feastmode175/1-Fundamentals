@@ -16,4 +16,16 @@ pin = input('Enter PIN: ')
 balance = 0
 
 #display user's current name and balance
-print(name, 'has been registered with a starting balance of $' + str(balance))
+print(name, 'has been registered with a starting balance of $' + str(balance), '\n')
+
+#login validation
+while True:
+    print('LOGIN')                                              #user pin and name requested
+    name_to_validate = input('Enter Name: ')
+    pin_to_validate = input('Enter PIN: ')          
+    
+    if name_to_validate == name and pin_to_validate == pin:     #check if entered date is the same as registered pin/name
+        print('Login Successful \n')
+        break
+    else:
+        print('Invalid Credentials! \n')
