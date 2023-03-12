@@ -63,7 +63,7 @@ while True:
         current_balance = deposit(current_balance)
         print('Current balance is now:', current_balance)
     elif option == '3':
-        current_balance = withdraw(current_balance)
+        current_balance = withdraw(current_balance, name)
         print('Current balance is now:', current_balance)
     elif option == '4':
         logout(name)
