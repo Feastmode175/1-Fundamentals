@@ -32,12 +32,20 @@ while True:
         else:
             break
     
+    #double check that user is satisfied with credentials
+    print('\n\nYour current username is:', name)
+    print('Your current PIN is: ', pin)
+    verify_user_info = input('Is this correct? \nYes or No? ')
+    if verify_user_info.lower() == 'no':
+        continue
+    elif verify_user_info.lower() == 'yes':         
+        #display user's current name and balance
+        current_balance = 0
+        print(name, 'has been registered with a starting balance of $' + str(current_balance), '\n')
+        break
+    else:
+        print('Invalid choice. Please reenter your username and PIN \n')
     
-    current_balance = 0
-
-    #display user's current name and balance
-    print(name, 'has been registered with a starting balance of $' + str(current_balance), '\n')
-    break
 
 #login validation
 while True:
