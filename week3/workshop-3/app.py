@@ -21,13 +21,14 @@ while True:
   option = input('\nPlease choose an option. ')
 
   #define user options
+  #option 1: make sure user is logged in correctly
   if option == '1':
     username = input('Enter your username: ')
     password = input('Enter your password: ')
     authorized_user = login(database, username, password)
-    
+  
+  # option 2: make sure user is new and add new username/pw to database
   elif option == '2':
-    print('Test 2')
     username = input('Enter your username: ')
     password = input('Enter your password: ')
     authorized_user = register(database, username)
