@@ -17,3 +17,9 @@ def register(database, username):
   else:
     print(username, 'has been registered.')
     return username
+  
+def donate(username):
+  donation_amount = input('Enter an amount to donate: ')
+  donation_string = username + ' donated ' + donation_amount
+  print('Thank you for your donation', username + '!')
+  return donation_string
