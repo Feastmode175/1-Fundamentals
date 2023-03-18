@@ -32,7 +32,7 @@ while True:
     username = input('Enter your username: ')
     password = input('Enter your password: ')
     user_to_register = register(database, username)
-    if user_to_register != '':
+    if user_to_register != '':  #I chose not to use 'authorized_user' to stop the require the user to log in manually after registering
       database[user_to_register] = password
   
   #option 3: make sure user is logged in, allow user to make donation, add to donations list
@@ -45,7 +45,7 @@ while True:
       print(donations)
   elif option == '4':
     print('Test 4')
-    #TODO: write show donations functionality
+    show_donations()
   elif option == '5':
     print('Goodbye!')
     break
