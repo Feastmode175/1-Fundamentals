@@ -18,8 +18,7 @@ while True:
   else:
     print('You are logged in as: ', authorized_user)
 
-  option = input('\n1Please choose an option. ')
-
+  option = input('\nPlease choose an option. ')
 
   #define user options
   if option == '1':
@@ -29,7 +28,12 @@ while True:
     
   elif option == '2':
     print('Test 2')
-    #TODO: write register functionality
+    username = input('Enter your username: ')
+    password = input('Enter your password: ')
+    authorized_user = register(database, username)
+    if username != '':
+      database[authorized_user] = password
+      
   elif option == '3':
     print('Test 3')
     #TODO: write donate functionality
@@ -37,5 +41,5 @@ while True:
     print('Test 4')
     #TODO: write show donations functionality
   elif option == '5':
-    print('Goodbye', authorized_user)
+    print('Goodbye', authorized_user +'!')
     break
