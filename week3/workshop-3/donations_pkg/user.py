@@ -23,3 +23,11 @@ def donate(username):
   donation_string = username + ' donated ' + donation_amount
   print('Thank you for your donation', username + '!')
   return donation_string
+
+def show_donations(donations):
+  print('\n---All Donations---')
+  if donations == []:
+    print('There are no donations.')
+  else:
+    for donation in donations:
+      print(donation)
