@@ -12,7 +12,7 @@ def login(database, username, password):
   
 def register(database, username):
   if username in database:
-    print('Username already registered \n')
+    print('Username already registered. \n')
     return ''
   else:
     print(username, 'has been registered.')
