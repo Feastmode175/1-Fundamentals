@@ -3,8 +3,8 @@ def login(database, username, password):
     print ('Welcome', username + '!')
     return username
   elif username in database and database[username] != password:
-    print('Incorrect password \n')
+    print('Incorrect password for', username, '\n')
     return ''
   else:
-    print('Username not found \n')
+    print('Username not found. Please register. \n')
     return ''
