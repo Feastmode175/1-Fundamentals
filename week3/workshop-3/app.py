@@ -50,3 +50,11 @@ while True:
   elif option == '5':
     print('Goodbye!')
     break
+  
+  #TODO: require username to be less than 10 characters and pw to be at least 4 characters
+  
+  #TODO: find a way to show total $ amount donated in show donations func
+  
+  #TODO: require donation to be a positive integer
+  
+  #TODO: allow admin to view all donations but logged in user can only see their donations
