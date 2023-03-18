@@ -42,10 +42,11 @@ while True:
     else:
       donation_string = donate(authorized_user)
       donations.append(donation_string)
-      print(donations)
+  
+  #print each item in donations list 1 at a time
   elif option == '4':
-    print('Test 4')
-    show_donations()
+    show_donations(donations)
+    
   elif option == '5':
     print('Goodbye!')
     break
