@@ -7,3 +7,11 @@ database = {
 donations = []
 
 authorized_user =''
+
+show_homepage()
+
+if authorized_user == '':
+  print('You must be logged in to donate.')
+else:
+  print('You are logged in as: ', authorized_user)
+
