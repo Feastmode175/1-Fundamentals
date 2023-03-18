@@ -1,4 +1,5 @@
 from donations_pkg.homepage import show_homepage
+from donations_pkg.user import *
 
 database = {
   'admin': 'password123'
@@ -16,13 +17,15 @@ if authorized_user == '':
 else:
   print('You are logged in as: ', authorized_user)
 
-option = input('Please choose an option.')
+option = input('Please choose an option. ')
+
 
 #define user options
-
 if option == '1':
-  print('Test 1')
-  #TODO write login functionality
+  username = input('Enter your username: ')
+  password = input('Enter your password: ')
+  authorized_user = login(database, username, password)
+  
 elif option == '2':
   print('Test 2')
   #TODO: write register functionality
