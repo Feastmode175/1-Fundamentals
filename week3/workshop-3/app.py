@@ -31,16 +31,21 @@ while True:
   elif option == '2':
     username = input('Enter your username: ')
     password = input('Enter your password: ')
-    authorized_user = register(database, username)
-    if username != '':
-      database[authorized_user] = password
-      
+    user_to_register = register(database, username)
+    if user_to_register != '':
+      database[user_to_register] = password
+  
+  #option 3: make sure user is logged in, allow user to make donation, add to donations list
   elif option == '3':
-    print('Test 3')
-    #TODO: write donate functionality
+    if authorized_user == '':
+      print('You must be logged in to donate.')
+    else:
+      donation_string = donate(authorized_user)
+      donations.append(donation_string)
+      print(donations)
   elif option == '4':
     print('Test 4')
     #TODO: write show donations functionality
   elif option == '5':
-    print('Goodbye', authorized_user +'!')
+    print('Goodbye!')
     break
