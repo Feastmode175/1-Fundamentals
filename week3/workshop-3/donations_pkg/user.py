@@ -28,10 +28,17 @@ def donate(username):
     print('Thank you for your donation', username + '!')
     return donation_string
 
-def show_donations(donations):
+def show_donations(donations, username):
   print('\n---All Donations---')
   if donations == []:
     print('There are no donations.')
   else:
-    for donation in donations:
-      print(donation)
+    #admin will show all donations
+    if username == 'admin':
+      for donation in donations:
+        print(donation)
+    else:
+      #limit user to only seeing their donations
+      for donation in donations:
+        if donation[0:len(username)] == username:
+          print(donation)
