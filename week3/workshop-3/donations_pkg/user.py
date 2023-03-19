@@ -20,9 +20,13 @@ def register(database, username):
   
 def donate(username):
   donation_amount = input('Enter an amount to donate: ')
-  donation_string = username + ' donated ' + donation_amount
-  print('Thank you for your donation', username + '!')
-  return donation_string
+  
+  if donation_amount.isdigit() == False or float(donation_amount) <= 0:
+    print('Donation must be an amount that is greater than $0.')
+  else: 
+    donation_string = username + ' donated ' + donation_amount
+    print('Thank you for your donation', username + '!')
+    return donation_string
 
 def show_donations(donations):
   print('\n---All Donations---')
