@@ -41,7 +41,7 @@ while True:
       print('You must be logged in to donate.')
     else:
       donation_string = donate(authorized_user)
-      if donation_string != None:
+      if donation_string != None:     #stops inappropriate donations such as negative numbers from appending blank donations to list
         donations.append(donation_string)
   
   #print each item in donations list 1 at a time
