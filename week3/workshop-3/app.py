@@ -41,7 +41,8 @@ while True:
       print('You must be logged in to donate.')
     else:
       donation_string = donate(authorized_user)
-      donations.append(donation_string)
+      if donation_string != None:
+        donations.append(donation_string)
   
   #print each item in donations list 1 at a time
   elif option == '4':
