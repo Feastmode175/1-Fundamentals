@@ -45,8 +45,10 @@ while True:
         donations.append(donation_string)
   
   #print each item in donations list 1 at a time
+  #admin account will show all donations
+  #each user will only see their donations
   elif option == '4':
-    show_donations(donations)
+    show_donations(donations, username)
     
   elif option == '5':
     print('Goodbye!')
