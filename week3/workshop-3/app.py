@@ -55,6 +55,5 @@ while True:
   
   #TODO: find a way to show total $ amount donated in show donations func
   
-  #TODO: require donation to be a positive integer
   
   #TODO: allow admin to view all donations but logged in user can only see their donations
