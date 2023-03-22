@@ -4,6 +4,6 @@ class Player:
 
 #instantiate an object from a class
 player1 = Player()
-print(player1.max_hp)
+print(player1.max_hp) #access attribute of player class
 player2 = Player()
 print(player2.max_hp) 
