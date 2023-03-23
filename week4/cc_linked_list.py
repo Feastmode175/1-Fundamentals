@@ -31,7 +31,7 @@ class LinkedList:
             return
         
         old_head_node = self.head
-        new_node = self.head
+        self.head = new_node
         new_node.next = old_head_node
         print('Prepended new Head Node with value:', self.head.value)
         print('The Node following Head is:', new_node.next.value)
@@ -39,4 +39,4 @@ class LinkedList:
 
 llist = LinkedList()
 llist.prepend('First Node')
-llist.prepend('Inserted New First Node')
+llist.prepend('Inserted Before First Node')
