@@ -42,7 +42,7 @@ class BankUser(User):
   #transfer money from one user to another
   def transfer_money(self, transfer_recipient, transfer_amount):
     #verify how much/where money is being sent
-    print('You are transferring', transfer_amount, 'to', transfer_recipient.name + '.\n')
+    print('You are transferring', '$' + str(transfer_amount), 'to', transfer_recipient.name + '.\n')
     
     #require user to verify with pin. only send money if pin is correct.
     print('Authentication required.')
@@ -50,14 +50,44 @@ class BankUser(User):
     
     if self.pin != pin_to_validate:
       print('Pin incorrect. \nTransaction terminated.')
+      return False
     else:
       print('Transaction authorized. \nTransferring', transfer_amount, 'to', transfer_recipient.name)
       self.balance -= transfer_amount
       print(self.name, 'has an account balance of:', self.balance)
       transfer_recipient.balance += transfer_amount
-      print(transfer_recipient.name, 'has an account balance of: ', transfer_recipient.balance)
+      print(transfer_recipient.name, 'has an account balance of: ', transfer_recipient.balance, '\n\n')
       
-
+  #request money from another user
+  def request_money(self, request_recipient, request_amount):
+    #requested user must validate with pin
+    print('You are requesting', '$' + str(request_amount), 'from', request_recipient.name)
+    print('User authentication is required.')
+    recipient_pin_to_validate = input('Enter ' +  request_recipient.name + "'s PIN: ")
+    
+    #if requesting user pin is correct, validate requesting user's password
+    if request_recipient.pin == int(recipient_pin_to_validate):
+      user_password_to_validate = input('Enter your password: ')
+      
+      if user_password_to_validate == self.password:
+        print('Request authorized.')
+        
+        request_recipient.balance -= request_amount
+        print(request_recipient.name, 'has sent $' + str(request_amount))
+        
+        self.balance += request_amount
+        print(self.name, 'has a balance of:', self.balance)
+        print(request_recipient.name, 'has a balance of:', request_recipient.balance, '\n\n')
+        
+        
+      else:
+        print('Incorrect password.')
+        return False
+      
+    else:
+      print('Incorrect PIN.')
+      return False
+    
     
     
 
@@ -114,3 +144,5 @@ test_bank_user = BankUser('Chuck', 5678, 'password123')
 test_bank_user2 = BankUser('Larry', 2345, 'password321')
 test_bank_user.deposit(5000)
 test_bank_user.transfer_money(test_bank_user2, 500)
+
+test_bank_user2.request_money(test_bank_user, 1000)
