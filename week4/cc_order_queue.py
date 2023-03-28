@@ -44,8 +44,10 @@ class IceCreamShop:
     for order in self.orders.items:
       print(order)
       
+      
   def next_order(self):
-    self.orders.dequeue
+    next_order = self.orders.dequeue()
+    print('\nNext Order Up!\n', next_order)
     
 
 shop = IceCreamShop(["rocky road", "mint chip", "pistachio"])
