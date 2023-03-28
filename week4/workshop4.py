@@ -60,35 +60,32 @@ class BankUser(User):
       
   #request money from another user
   def request_money(self, request_recipient, request_amount):
-    #requested user must validate with pin
+    #receiving user must validate with pin
     print('You are requesting', '$' + str(request_amount), 'from', request_recipient.name)
     print('User authentication is required.')
     recipient_pin_to_validate = input('Enter ' +  request_recipient.name + "'s PIN: ")
     
     #if requesting user pin is correct, validate requesting user's password
-    if request_recipient.pin == int(recipient_pin_to_validate):
-      user_password_to_validate = input('Enter your password: ')
+    if request_recipient.pin != int(recipient_pin_to_validate):
+      print('Incorrect PIN. Transaction cancelled.')
+      return False
       
-      if user_password_to_validate == self.password:
-        print('Request authorized.')
-        
-        request_recipient.balance -= request_amount
-        print(request_recipient.name, 'has sent $' + str(request_amount))
-        
-        self.balance += request_amount
-        print(self.name, 'has a balance of:', self.balance)
-        print(request_recipient.name, 'has a balance of:', request_recipient.balance, '\n\n')
-        
-        
-      else:
-        print('Incorrect password.')
-        return False
+    user_password_to_validate = input('Enter your password: ')
+      
+    if user_password_to_validate != self.password:
+      print('Incorrect password. Transaction cancelled.')
+      return False
       
     else:
-      print('Incorrect PIN.')
-      return False
-    
-    
+      print('Request authorized.')
+      
+      request_recipient.balance -= request_amount
+      print(request_recipient.name, 'has sent $' + str(request_amount))
+        
+      self.balance += request_amount
+      print(self.name, 'has a balance of:', self.balance)
+      print(request_recipient.name, 'has a balance of:', request_recipient.balance, '\n\n')
+      
     
 
 
@@ -143,6 +140,7 @@ test_bank_user.show_balance() """
 test_bank_user = BankUser('Chuck', 5678, 'password123')
 test_bank_user2 = BankUser('Larry', 2345, 'password321')
 test_bank_user.deposit(5000)
-test_bank_user.transfer_money(test_bank_user2, 500)
-
+#transfer() test
+#test_bank_user.transfer_money(test_bank_user2, 500)
+#request() test
 test_bank_user2.request_money(test_bank_user, 1000)
