@@ -1,3 +1,11 @@
+""" 
+I desperately tried to figure out some of the bonus assignments but in the interest of not falling farther behind I decided to revert it all.
+So this is just the basic working code.
+I owe you one lol.
+"""
+
+
+
 #make a class user with name, pin and password
 class User:
   def __init__(self, name, pin, password):
