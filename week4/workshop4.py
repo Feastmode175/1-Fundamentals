@@ -23,39 +23,21 @@ class BankUser(User):
   def __init__(self, name, pin, password,):
     super().__init__(name, pin, password)
     self.balance = 0
-    
-  #this method will be used to make sure all transactions are initiated with a number that is greater than 0 cus don't repeat yourself...am i right?
-  def check_amount(self, amount):
-    is_negative = str(amount)
-    if (is_negative[0] == '-') or amount == 0:
-      print('The chosen amount must be greater than 0.')
-      return 0
-    elif (amount.isdigit() == False):
-      print('Please enter a number greater than 0.')
-      return 0
-    else:
-      return amount
-  
 
   #show current bank user balance
   def show_balance(self):
     print(self.name, 'has an account balance of:', self.balance)
     
   # withdraw specified amount
+  # TODO: if withdrawal amount is too much, produce error
   def withdraw(self, withdrawal_amount):
-    if self.check_amount(withdrawal_amount) == False:
-      return
-    else:
-      self.balance -= withdrawal_amount
-      return self.balance
+    self.balance -= withdrawal_amount
+    return self.balance
   
   #deposit specified amount
   def deposit(self, deposit_amount):
-    if self.check_amount(deposit_amount) == False:
-      return
-    else:
-      self.balance += deposit_amount
-      return self.balance
+    self.balance += deposit_amount
+    return self.balance
 
   #transfer money from one user to another
   def transfer_money(self, transfer_recipient, transfer_amount):
@@ -147,18 +129,18 @@ print(test_bank_user.balance) """
 
 """ Driver Code for Task 4"""
 #test bank user methods
-test_bank_user = BankUser('Chuck', 5678, 'password123')
+""" test_bank_user = BankUser('Chuck', 5678, 'password123')
 test_bank_user.show_balance()
-test_bank_user.deposit(-1000.00)
+test_bank_user.deposit(1000.00)
 test_bank_user.show_balance()
 test_bank_user.withdraw(500.00)
-test_bank_user.show_balance()
+test_bank_user.show_balance() """
 
 """ Driver Code for Task 5"""
-""" test_bank_user = BankUser('Chuck', 5678, 'password123')
+test_bank_user = BankUser('Chuck', 5678, 'password123')
 test_bank_user2 = BankUser('Larry', 2345, 'password321')
 test_bank_user.deposit(5000)
 #transfer() test
 #test_bank_user.transfer_money(test_bank_user2, 500)
 #request() test
-test_bank_user2.request_money(test_bank_user, 1000) """
+test_bank_user2.request_money(test_bank_user, 1000)
