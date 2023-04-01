@@ -1,7 +1,7 @@
 import pygame
 import time
 import random
-
+#TODO add in difficulty setting
 snake_speed = 15
 
 
@@ -59,7 +59,7 @@ def show_score(choice, color, font, size):
   
 #ending conditions for game
 def end_game():
-    
+  #TODO: add in play again feature
   end_game_font = pygame.font.SysFont('times new roman', 50)
   
   #create area that text will be shown on game surface
