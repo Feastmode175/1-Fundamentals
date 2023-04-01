@@ -98,7 +98,7 @@ while True:
         new_direction = 'right'
         
   #update snake heading with new direction
-  
+  #disallow user to fold snake back on itself
   if new_direction == 'up' and snake_heading != 'down':
     snake_heading = 'up'
   if new_direction == 'down' and snake_heading != 'up':
@@ -108,7 +108,7 @@ while True:
   if new_direction == 'right' and snake_heading != 'left':
     snake_heading = 'right'
   
-  
+  #move snake in indicated direction
   if snake_heading == 'up':
     snake_position[1] -= 10
   if snake_heading == 'down':
