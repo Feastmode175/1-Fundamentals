@@ -119,6 +119,7 @@ while True:
     snake_position[0] += 10
     
   #snake mechanics
+  #move snake forward
   snake_body.insert(0, list(snake_position))
   
   #snake grows if it eats the food
