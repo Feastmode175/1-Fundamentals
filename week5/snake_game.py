@@ -13,7 +13,7 @@ window_height = 480
 colors = {
   'black': pygame.Color(0, 0, 0), 
   'white': pygame.Color(255, 255, 255), 
-  'red': pygame.Color(255, 255, 255),
+  'red': pygame.Color(255, 0, 0),
   'green':pygame.Color(0, 255, 0),
   'blue': pygame.Color(0, 0, 255)
   }
@@ -64,7 +64,7 @@ def end_game():
   end_game_font = pygame.font.SysFont('times new roman', 50)
   
   #create area that text will be shown on game surface
-  end_game_display = end_game_font.render('Your score is: ' + str(score), True, colors['red'])
+  end_game_display = end_game_font.render('Your final score is: ' + str(score), True, colors['red'])
   end_game_rectangle = end_game_display.get_rect()
   end_game_rectangle.midtop = (window_width/2, window_height/4)
   
