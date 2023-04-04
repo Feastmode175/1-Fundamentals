@@ -19,6 +19,6 @@ def guess_random_number(tries, start, stop):
       print('Guess higher!')
       tries -= 1
       
-  print('Sorry! You ran out of tries before you guessed the magic number.')
+  print(f'Sorry! You ran out of tries before you guessed the magic number: {random_number}')
   
 guess_random_number(3, 1, 10)
